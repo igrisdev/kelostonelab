@@ -7,7 +7,7 @@ export default {
     extend: {
       container: {
         screens: {
-          xl: '896px',
+          xl: '1440px',
         },
       },
     },
