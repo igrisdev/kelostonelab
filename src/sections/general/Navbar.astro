@@ -1,0 +1,25 @@
+---
+import Container from '@components/general/Container.astro'
+---
+
+<div
+  class='fixed top-0 left-0 w-full z-50 h-[8vh] bg-base-100 flex items-center'
+>
+  <Container className='flex items-center gap-4 w-full'>
+    <a href='/' class='font-semibold'> Kelo Stone Lab </a>
+
+    <nav class='flex-1 flex items-center justify-between'>
+      <div class='flex gap-2'>
+        <a href='/products'>Productos</a>
+        <a href='/collections'>Colecciones</a>
+      </div>
+
+      <div class='flex gap-2'>
+        <a href='/about'>Sobre Nosotros</a>
+        <a href='/contact'>Contacto</a>
+      </div>
+    </nav>
+
+    <div>Carrito</div>
+  </Container>
+</div>
