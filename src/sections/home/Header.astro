@@ -1,0 +1,73 @@
+---
+import Container from '@components/general/Container.astro'
+import { Image } from 'astro:assets'
+import img from './../../../public/pro.png'
+
+const info = [
+  {
+    title: 'Free shipping',
+    span: 'Free shipping',
+    icon: '🚚',
+  },
+  {
+    title: 'Fast delivery',
+    span: 'Fast delivery',
+    icon: '🚚',
+  },
+  {
+    title: 'Payment methods',
+    span: 'Payment methods',
+    icon: '🚚',
+  },
+  {
+    title: 'Payment methods',
+    span: 'Payment methods',
+    icon: '🚚',
+  },
+]
+---
+
+<header class='pt-[8vh] h-screen bg-base-200 flex flex-col'>
+  <Container className='flex-1  grid grid-cols-2 gap-4 items-center'>
+    <div>
+      <Image src={img} alt='Inicio' />
+    </div>
+
+    <div class='flex flex-col gap-6'>
+      <div>
+        <div class='mb-2'>5 estrellas</div>
+        <p class='font-semibold text-xl mb-2'>Best Quality Products</p>
+        <h1 class='font-semibold text-6xl leading-[65px]'>
+          Join The Organic Movement!
+        </h1>
+      </div>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat incidunt
+        rerum facilis illo, repellendus blanditiis ess
+      </p>
+
+      <div>
+        <button class='btn btn-success text-base-100 font-bold'
+          >Añadir al carrito</button
+        >
+      </div>
+    </div>
+  </Container>
+
+  <div class='bg-info-content'>
+    <Container className='h-[12vh] grid grid-cols-4 gap-4 place-content-center'>
+      {
+        info.map(item => (
+          <div class='p-2 px-4 bg-base-content text-base-100 flex items-center gap-4 h-[9vh]'>
+            <div>{item.icon}</div>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.span}</p>
+            </div>
+          </div>
+        ))
+      }
+    </Container>
+  </div>
+</header>
