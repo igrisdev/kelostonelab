@@ -1,5 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import BeforeAndAfter from '@sections/home/BeforeAndAfter.astro'
+import Layout from '@layouts/Layout.astro'
+import PromoProducts from '@sections/home/PromoProducts.astro'
+import ProductCollections from '@sections/home/ProductCollections.astro'
+import FeaturedProducts from '@sections/home/FeaturedProducts.astro'
+import FeaturedProduct from '@sections/home/FeaturedProduct.astro'
+import Header from '@sections/home/Header.astro'
 ---
 
-<Layout> hola </Layout>
+<Layout>
+  <Header />
+  <BeforeAndAfter />
+  <PromoProducts />
+  <ProductCollections />
+  <FeaturedProducts />
+  <FeaturedProduct />
+</Layout>
