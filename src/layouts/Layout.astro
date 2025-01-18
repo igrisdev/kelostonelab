@@ -1,9 +1,11 @@
 ---
 import Container from '../components/general/Container.astro'
+import Navbar from '@sections/general/Navbar.astro'
+import Footer from '@sections/general/Footer.astro'
 ---
 
 <!doctype html>
-<html lang='en' data-theme='dark'>
+<html lang='en' data-theme='light'>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
@@ -12,11 +14,11 @@ import Container from '../components/general/Container.astro'
     <title>Kelo Stone Lab</title>
   </head>
   <body>
-    <!-- <Navbar /> -->
+    <Navbar />
 
     <slot />
 
-    <!-- <Footer /> -->
+    <Footer />
   </body>
 </html>
 
