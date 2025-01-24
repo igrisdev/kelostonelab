@@ -14,6 +14,9 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.4
         version: 5.1.4(astro@5.1.7(jiti@1.21.7)(rollup@4.30.1)(typescript@5.7.3)(yaml@2.7.0))(tailwindcss@3.4.17)
+      '@shopify/storefront-api-client':
+        specifier: ^1.0.3
+        version: 1.0.3
       '@types/react':
         specifier: ^19.0.7
         version: 19.0.7
@@ -581,6 +584,12 @@ packages:
 
   '@shikijs/vscode-textmate@10.0.1':
     resolution: {integrity: sha512-fTIQwLF+Qhuws31iw7Ncl1R3HUDtGwIipiJ9iU+UsDUwMhegFcQKQHd51nZjb7CArq0MvON8rbgCGQYWHUKAdg==}
+
+  '@shopify/graphql-client@1.2.1':
+    resolution: {integrity: sha512-wySl/G7M/ZDxtcUEOF24wyfTigFnzW0hr3AzcldoQTl0OToLK2mQ7FBDSSwmfa00VrQ3TQwFM+tAAByK9tr3JQ==}
+
+  '@shopify/storefront-api-client@1.0.3':
+    resolution: {integrity: sha512-U0XHSU5/Xno8r3iNOMfKT1y5tvxl6UJCezC5LYKYDow09cSGar+Z7cTL4NNOMmMHstnueEyfJtPka+G+P5vufA==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -2474,6 +2483,12 @@ snapshots:
       '@types/hast': 3.0.4
 
   '@shikijs/vscode-textmate@10.0.1': {}
+
+  '@shopify/graphql-client@1.2.1': {}
+
+  '@shopify/storefront-api-client@1.0.3':
+    dependencies:
+      '@shopify/graphql-client': 1.2.1
 
   '@types/babel__core@7.20.5':
     dependencies:
