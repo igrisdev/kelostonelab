@@ -1,3 +1,78 @@
-<section>
-  <h1>RelatedProducts</h1>
-</section>
+---
+import Container from '@components/general/Container.astro'
+
+const products = [
+  {
+    title: 'Title More Last',
+    category: 'Category',
+    price: '$100.000',
+    image: 'https://picsum.photos/id/1003/1200/800',
+  },
+  {
+    title: 'Title More Last',
+    category: 'Category',
+    price: '$100.000',
+    image: 'https://picsum.photos/id/1003/1200/800',
+  },
+  {
+    title: 'Title More Last',
+    category: 'Category',
+    price: '$100.000',
+    image: 'https://picsum.photos/id/1003/1200/800',
+  },
+  {
+    title: 'Title More Last',
+    category: 'Category',
+    price: '$100.000',
+    image: 'https://picsum.photos/id/1003/1200/800',
+  },
+  {
+    title: 'Title More Last',
+    category: 'Category',
+    price: '$100.000',
+    image: 'https://picsum.photos/id/1003/1200/800',
+  },
+  {
+    title: 'Title More Last',
+    category: 'Category',
+    price: '$100.000',
+    image: 'https://picsum.photos/id/1003/1200/800',
+  },
+]
+---
+
+<Container>
+  <h2 class='text-3xl font-bold my-6'>Related Products</h2>
+
+  <div class=' grid grid-cols-4 gap-4'>
+    {products.map((item) => (
+      <article class='flex flex-col gap-2'>
+      <div class='aspect-square bg-base-200'>
+        <a href='/product/product-1'>
+          <img
+            src='https://picsum.photos/id/1003/1200/800'
+            alt='Imagen de portada'
+            class='w-full h-full object-cover'
+          />
+        </a>
+      </div>
+
+      <div class='flex gap-2'>
+        <div class='flex-1 flex flex-col'>
+          <a href='/product/product-1'>
+            <h3 class='text-md font-semibold'>Title More Last</h3>
+          </a>
+          <p class='text-sm font-light mb-1'>Category</p>
+          <div>
+            <span class='font-semibold'>$100.000{' '}</span>
+            <!-- <span>- Sale</span> -->
+          </div>
+        </div>
+
+        <div>Carrito</div>
+      </div>
+    </article>
+    ))}
+  </div>
+</Container>
+
