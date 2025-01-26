@@ -13,7 +13,8 @@
       "@services/*": ["src/services/*"],
       "@types/*": ["src/types/*"],
       "@stores/*": ["src/stores/*"],
-      "@layouts/*": ["src/layouts/*"]
+      "@layouts/*": ["src/layouts/*"],
+      "@graphql/*": ["src/graphql/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

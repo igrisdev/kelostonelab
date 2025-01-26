@@ -8,34 +8,13 @@ import FeaturedProduct from '@sections/home/FeaturedProduct.astro'
 import Header from '@sections/home/Header.astro'
 
 import { client } from '@services/connectionShopify'
-
-const productsQuery = `
-  query ProductsQuery($first: Int) {
-    products(first: $first) {
-      edges {
-        node {
-          id
-          title
-          description
-          handle
-          images(first: 1) {
-            edges {
-              node {
-                originalSrc
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+import { productsQuery } from '@graphql/queries/products'
 
 async function getProducts(first = 10) {
   try {
     const { data, errors, extensions } = await client.request(productsQuery, {
       variables: {
-        first, // Número de productos que deseas obtener
+        first,
       },
     })
 
@@ -49,7 +28,7 @@ async function getProducts(first = 10) {
   }
 }
 
-getProducts(10) // Cambia el número según lo que necesites
+// getProducts(10)
 ---
 
 <Layout>
