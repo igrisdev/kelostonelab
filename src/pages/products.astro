@@ -1,7 +1,106 @@
 ---
+import Container from '@components/general/Container.astro'
 import Layout from '@layouts/Layout.astro'
+
+
+const products = [
+  {
+    title: 'Title More Last',
+    category: 'Category',
+    price: '$100.000',
+    image: 'https://picsum.photos/id/1003/1200/800',
+  },
+  {
+    title: 'Title More Last',
+    category: 'Category',
+    price: '$100.000',
+    image: 'https://picsum.photos/id/1003/1200/800',
+  },
+  {
+    title: 'Title More Last',
+    category: 'Category',
+    price: '$100.000',
+    image: 'https://picsum.photos/id/1003/1200/800',
+  },
+  {
+    title: 'Title More Last',
+    category: 'Category',
+    price: '$100.000',
+    image: 'https://picsum.photos/id/1003/1200/800',
+  },
+  {
+    title: 'Title More Last',
+    category: 'Category',
+    price: '$100.000',
+    image: 'https://picsum.photos/id/1003/1200/800',
+  },
+  {
+    title: 'Title More Last',
+    category: 'Category',
+    price: '$100.000',
+    image: 'https://picsum.photos/id/1003/1200/800',
+  },
+]
 ---
 
 <Layout>
-  <h1>Productos</h1>
+  <Container className='pt-24'>
+    <section class='flex flex-col gap-3'>
+      <div>
+        <p class='font-thin text-sm'>Home/cast</p>
+      </div>
+
+      <div class='flex justify-between items-center'>
+        <div>Filter</div>
+
+        <div class='flex gap-3'>
+          <select name='sorting' id='sorting' class='bg-transparent'>
+            <option value='default'>Default Sorting</option>
+            <option value='priceHighToLow'>Price: high to low</option>
+            <option value='priceLowToHigh'>Price: low to high</option>
+            <option value='newest'>Newest</option>
+            <option value='oldest'>Oldest</option>
+          </select>
+
+          <div class='flex gap-3'>
+            <div>icon 1</div>
+            <div>icon 2</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class='pt-6'>
+      <div class='mt-10 grid grid-cols-5 gap-4'>
+        {products.map((item) => (
+          <article class='flex flex-col gap-2'>
+          <div class='aspect-square bg-base-200'>
+            <a href='/product/product-1'>
+              <img
+                src='https://picsum.photos/id/1003/1200/800'
+                alt='Imagen de portada'
+                class='w-full h-full object-cover'
+              />
+            </a>
+          </div>
+
+        <div class='flex gap-2'>
+          <div class='flex-1 flex flex-col'>
+            <a href='/product/product-1'>
+              <h3 class='text-md font-semibold'>Title More Last</h3>
+            </a>
+            <p class='text-sm font-light mb-1'>Category</p>
+            <div>
+              <span class='font-semibold'>$100.000{' '}</span>
+              <!-- <span>- Sale</span> -->
+            </div>
+          </div>
+
+          <div>Carrito</div>
+        </div>
+      </article>
+      ))}
+    </div>
+    </section>
+  </Container>
 </Layout>
