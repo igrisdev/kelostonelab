@@ -1,6 +1,6 @@
 ---
 import Container from '@components/general/Container.astro'
-// import { Menu, ShoppingCart } from 'lucide-react'
+import { Menu, ShoppingCart } from 'lucide-react'
 ---
 
 <div
@@ -23,16 +23,14 @@ import Container from '@components/general/Container.astro'
 
     <div class='flex items-center gap-1'>
       <a href='/cart' class='btn btn-ghost btn-square'>
-        <!-- <ShoppingCart size={20} /> -->
-        a
+        <ShoppingCart size={20} client:load />
       </a>
 
       <button
         id='button-toggle'
         class='flex md:hidden btn btn-ghost btn-square'
       >
-        <!-- <Menu /> -->
-        m
+        <Menu client:load />
       </button>
     </div>
   </Container>
