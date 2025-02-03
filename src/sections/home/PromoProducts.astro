@@ -2,17 +2,17 @@
 import Container from '@components/general/Container.astro'
 ---
 
-<Container className='h-screen'>
-  <div class='flex gap-4 items-center'>
-    <div class='h-[50vh] w-[80vw] relative'>
+<Container className='py-10 flex flex-col gap-10'>
+  <div class='flex flex-col md:flex-row gap-4 items-center'>
+    <div class='sm:min-w-[300px] max-h-[400px] md:max-h-full'>
       <img
         src='https://r-charts.com/es/miscelanea/procesamiento-imagenes-magick_files/figure-html/importar-imagen-r.png'
         alt='Imagen de portada'
-        class='w-full h-full'
+        class='w-full h-full object-contain'
       />
     </div>
 
-    <div class='pl-20'>
+    <div class='md:pl-20'>
       <h2 class='text-4xl font-bold mb-4'>Unique Products</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
@@ -26,8 +26,8 @@ import Container from '@components/general/Container.astro'
     </div>
   </div>
 
-  <div class='flex gap-4 items-center'>
-    <div class='pr-20'>
+  <div class='flex flex-col-reverse md:flex-row gap-4 items-center'>
+    <div class='md:pr-20'>
       <h2 class='text-4xl font-bold mb-4'>Unique Products</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
@@ -40,7 +40,7 @@ import Container from '@components/general/Container.astro'
       </p>
     </div>
 
-    <div class='h-[45vh] w-[80vw] relative'>
+    <div class='sm:min-w-[300px] max-h-[400px] md:max-h-full'>
       <img
         src='https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp'
         alt='Imagen de portada'
