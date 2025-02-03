@@ -22,13 +22,15 @@ async function getProducts(first = 10) {
       console.error('Errores en la consulta:', errors)
     } else {
       console.log('Productos obtenidos:', data.products.edges)
+
+      return data.products.edges
     }
   } catch (error) {
     console.error('Error ejecutando la consulta:', error)
   }
 }
 
-// getProducts(10)
+const products = await getProducts(10)
 ---
 
 <Layout>
@@ -38,4 +40,5 @@ async function getProducts(first = 10) {
   <ProductCollections />
   <FeaturedProducts />
   <FeaturedProduct />
+  <p>{JSON.stringify(products)}</p>
 </Layout>
