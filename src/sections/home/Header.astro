@@ -1,6 +1,6 @@
 ---
 import Container from '@components/general/Container.astro'
-import { Image } from 'astro:assets'
+// import { Image } from 'astro:assets'
 import img from './../../../public/pro.png'
 
 const info = [
@@ -28,17 +28,21 @@ const info = [
 ---
 
 <header class='pt-[8vh] h-screen bg-base-200 flex flex-col'>
-  <Container className='flex-1  grid grid-cols-2 gap-4 items-center'>
-    <div>
+  <Container
+    className='flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 items-center place-content-center md:place-content-center'
+  >
+    <div class='flex items-center justify-center'>
       <!-- <Image src={img} alt='Inicio' /> -->
-      <img src={img.src} alt='Indico' />
+      <div class='max-w-[300px] h-[300px] relative md:max-w-full md:h-full'>
+        <img src={img.src} alt='Indico' />
+      </div>
     </div>
 
-    <div class='flex flex-col gap-6'>
+    <div class='flex flex-col gap-6 text-center md:text-left'>
       <div>
         <div class='mb-2'>5 estrellas</div>
-        <p class='font-semibold text-xl mb-2'>Best Quality Products</p>
-        <h1 class='font-semibold text-6xl leading-[65px]'>
+        <p class='font-semibold md:text-xl mb-2'>Best Quality Products</p>
+        <h1 class='font-semibold text-3xl md:text-6xl md:leading-[65px]'>
           Join The Organic Movement!
         </h1>
       </div>
