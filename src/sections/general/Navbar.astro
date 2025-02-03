@@ -1,14 +1,15 @@
 ---
 import Container from '@components/general/Container.astro'
+import { Menu, ShoppingCart } from 'lucide-react'
 ---
 
 <div
   class='fixed top-0 left-0 w-full z-50 h-[8vh] bg-base-100 flex items-center border-b-[1px] border-base-300'
 >
-  <Container className='flex items-center gap-4 w-full'>
+  <Container className='flex items-center gap-4 w-full justify-between'>
     <a href='/' class='font-semibold'> Kelo Stone Lab </a>
 
-    <nav class='flex-1 flex items-center justify-between'>
+    <nav class='flex-1 items-center justify-between hidden md:flex'>
       <div class='flex gap-2'>
         <a href='/products'>Productos</a>
         <a href='/collections'>Colecciones</a>
@@ -20,6 +21,14 @@ import Container from '@components/general/Container.astro'
       </div>
     </nav>
 
-    <div>Carrito</div>
+    <div class='flex items-center gap-1'>
+      <a href='/cart' class='btn btn-ghost btn-square'>
+        <ShoppingCart size={20} />
+      </a>
+
+      <button id='button-toggle' class='btn btn-ghost btn-square'>
+        <Menu />
+      </button>
+    </div>
   </Container>
 </div>
