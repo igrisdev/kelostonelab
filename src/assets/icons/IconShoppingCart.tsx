@@ -1,5 +1,5 @@
 import { ShoppingCart } from 'lucide-react'
 
-export const IconShoppingCart = () => {
-  return <ShoppingCart size={20} />
+export const IconShoppingCart = ({ size = 20 }: { size?: number }) => {
+  return <ShoppingCart size={size} />
 }
