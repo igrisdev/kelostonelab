@@ -7,6 +7,11 @@ export const productsQuery = `
           title
           description
           handle
+          priceRange {
+            minVariantPrice {
+              amount
+            }
+          }
           images(first: 1) {
             edges {
               node {
