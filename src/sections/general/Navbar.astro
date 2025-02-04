@@ -1,5 +1,6 @@
 ---
 import { IconMenu } from '@assets/icons/IconMenu'
+import { IconShoppingCart } from '@assets/icons/IconShoppingCart'
 import Container from '@components/general/Container.astro'
 ---
 
@@ -23,14 +24,10 @@ import Container from '@components/general/Container.astro'
 
     <div class='flex items-center gap-1'>
       <a href='/cart' class='btn btn-ghost btn-square'>
-        <!-- <ShoppingCart size={20} client:only /> -->
+        <IconShoppingCart client:only />
       </a>
 
-      <button
-        id='button-toggle'
-        class='flex md:hidden btn btn-ghost btn-square'
-      >
-        <!-- <Menu client:only /> -->
+      <button class='flex md:hidden btn btn-ghost btn-square'>
         <IconMenu client:only />
       </button>
     </div>
