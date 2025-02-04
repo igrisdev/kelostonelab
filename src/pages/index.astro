@@ -30,7 +30,7 @@ async function getProducts(first = 10) {
   }
 }
 
-// const products = await getProducts(10)
+const products = await getProducts(10)
 ---
 
 <Layout>
@@ -40,5 +40,5 @@ async function getProducts(first = 10) {
   <ProductCollections />
   <FeaturedProducts />
   <FeaturedProduct />
-  <!-- <p>{JSON.stringify(products)}</p> -->
+  <p>{JSON.stringify(products)}</p>
 </Layout>
