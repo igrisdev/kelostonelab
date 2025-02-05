@@ -1,11 +1,11 @@
 ---
 import { getProduct } from '@graphql/functions/products'
 
-const { slug } = Astro.params
+const { id } = Astro.params
 
-if (!slug) return Astro.redirect('/404')
+if (!id) return Astro.redirect('/404')
 
-const product = await getProduct(slug)
+const product = await getProduct('gid://shopify/Product/' + id)
 ---
 
 <section class='grid md:grid-cols-2 gap-4'>
@@ -30,13 +30,6 @@ const product = await getProduct(slug)
       </div>
 
       <p>Stock: 10 available</p>
-
-      <!-- <p class='text-sm'>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
-        at quod accusamus, incidunt doloremque nulla dolorum fugiat voluptate
-        rerum eius voluptatibus aliquam quae voluptatum commodi sequi sunt atque
-        non vitae!
-      </p> -->
     </div>
 
     <div class='flex gap-5 my-3'>
