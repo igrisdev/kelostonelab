@@ -1,0 +1,16 @@
+---
+const { longitude = 2 } = Astro.props
+
+const large = Array(longitude)
+large.fill('')
+---
+
+{
+  large.map(() => (
+    <div class='flex flex-col gap-4'>
+      <div class='skeleton aspect-square' />
+      <div class='skeleton h-4 w-28' />
+      <div class='skeleton h-4 w-full' />
+    </div>
+  ))
+}
