@@ -1,8 +1,18 @@
+---
+import { getProduct } from '@graphql/functions/products'
+
+const { slug } = Astro.params
+
+if (!slug) return Astro.redirect('/404')
+
+const product = await getProduct(slug)
+---
+
 <section class='grid md:grid-cols-2 gap-4'>
   <div>
     <div class='aspect-square'>
       <img
-        src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+        src={product?.image}
         alt='Imagen de producto'
         class='w-full h-full object-cover'
       />
@@ -11,22 +21,22 @@
 
   <div>
     <div class='flex flex-col gap-1'>
-      <p class='text-sm font-semibold'>Armchair, Chair, Recliner</p>
-      <h1 class='text-2xl font-bold'>Wooden Rocking Chair</h1>
+      <p class='text-sm font-semibold'>{product?.category}</p>
+      <h1 class='text-2xl font-bold'>{product?.title}</h1>
 
       <div>
-        <span class='font-semibold text-xl'>$100.000</span>
+        <span class='font-semibold text-xl'>${product?.price}{' '}</span>
         <span>Send Free</span>
       </div>
 
       <p>Stock: 10 available</p>
 
-      <p class='text-sm'>
+      <!-- <p class='text-sm'>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
         at quod accusamus, incidunt doloremque nulla dolorum fugiat voluptate
         rerum eius voluptatibus aliquam quae voluptatum commodi sequi sunt atque
         non vitae!
-      </p>
+      </p> -->
     </div>
 
     <div class='flex gap-5 my-3'>
