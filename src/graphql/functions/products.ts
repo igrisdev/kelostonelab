@@ -32,6 +32,10 @@ export type iProduct = {
   image: string
 }
 
+// export type iProductInfo = iProduct & {
+//   descriptionHtml: string
+// }
+
 export async function getProducts(first = 10) {
   const variables = {
     first,
@@ -79,7 +83,7 @@ export const getProduct = async (id: string) => {
     if (errors) {
       console.error('Errores en la consulta:', errors)
     } else {
-      console.log('Producto obtenido:', JSON.stringify(data.product, null, 2))
+      // console.log('Producto obtenido:', JSON.stringify(data.product, null, 2))
 
       const newData = {
         id: data.product.id,
@@ -87,6 +91,8 @@ export const getProduct = async (id: string) => {
         category: data.product.handle,
         price: data.product.priceRange.minVariantPrice.amount,
         image: data.product.images.edges[0].node.originalSrc,
+        description: data.product.description,
+        descriptionHtml: data.product.descriptionHtml,
       }
 
       return newData

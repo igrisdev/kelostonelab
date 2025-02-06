@@ -31,6 +31,7 @@ export const getProductQuery = `
       id
       title
       description
+      descriptionHtml
       handle
       priceRange {
         minVariantPrice {
