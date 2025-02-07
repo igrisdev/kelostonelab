@@ -1,0 +1,88 @@
+---
+import Container from '@components/general/Container.astro'
+import Layout from '@layouts/Layout.astro'
+
+const products = Array(3).fill(0)
+---
+
+<Layout>
+  <Container className='pt-24 h-full flex flex-col'>
+    <div class='breadcrumbs max-w-max text-lg mx-auto'>
+      <ul>
+        <li>1 Shopping Cart</li>
+        <li>Long text 2</li>
+        <li>Long text 2</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class='text-4xl font-bold text-center mt-4 mb-8'>
+        Carrito de compras
+      </h2>
+    </div>
+
+    <div class='flex flex-col lg:flex-row items-center lg:items-start gap-6'>
+      <div class='flex-1 w-full max-h-[50vh] overflow-auto lg:w-max'>
+        <table class='table border'>
+          <!-- head -->
+          <thead>
+            <tr>
+              <th></th>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              products.map(() => (
+                <tr>
+                  <td>x</td>
+                  <td class='flex gap-4 items-center'>
+                    <div class='aspect-square w-16 bg-base-200 overflow-hidden'>
+                      <img src='' alt='Producto img' />
+                    </div>
+                    <p>Aloe Vera</p>
+                  </td>
+                  <td>$100.000</td>
+                  <td>2</td>
+                  <td>$200.000</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class='lg:max-w-md w-full h-min grid gap-4 border'>
+        <div>
+          <table class='table border-b'>
+            <thead>
+              <tr>
+                <th>Carrito</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Subtotal</td>
+                <td>$200.000</td>
+              </tr>
+              <tr>
+                <td>Total</td>
+                <td>$200.000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class='px-4 pb-4'>
+          <button class='btn rounded-none w-full btn-primary font-bold'>
+            Sigue la compra
+          </button>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Layout>
