@@ -1,11 +1,12 @@
 ---
+import { IconCircleX } from '@assets/icons/IconCircleX'
 import { IconMenu } from '@assets/icons/IconMenu'
 import { IconShoppingCart } from '@assets/icons/IconShoppingCart'
 import Container from '@components/general/Container.astro'
 ---
 
 <div
-  class='fixed top-0 left-0 w-full z-50 h-[8vh] bg-base-100 flex items-center border-b-[1px] border-base-300'
+  class='fixed top-0 left-0 right-0 w-full z-50 h-[8vh] bg-base-100 flex items-center border-b-[1px] border-base-300'
 >
   <Container className='flex items-center gap-4 w-full justify-between'>
     <a href='/' class='font-semibold'> Kelo Stone Lab </a>
@@ -23,9 +24,72 @@ import Container from '@components/general/Container.astro'
     </nav>
 
     <div class='flex items-center gap-1'>
-      <a href='/cart' class='btn btn-ghost btn-square'>
-        <IconShoppingCart client:only />
-      </a>
+      <div class='drawer drawer-end'>
+        <input id='my-drawer-4' type='checkbox' class='drawer-toggle' />
+        <div class='drawer-content'>
+          <label
+            for='my-drawer-4'
+            class='drawer-button btn btn-ghost btn-square'
+          >
+            <IconShoppingCart client:only />
+          </label>
+        </div>
+        <div class='drawer-side'>
+          <label
+            for='my-drawer-4'
+            aria-label='close sidebar'
+            class='drawer-overlay'></label>
+          <div
+            class='bg-base-100 text-base-content h-screen w-full max-w-lg flex flex-col'
+          >
+            <h4 class='text-lg font-medium border-b-2 py-2 px-4 mb-6'>
+              Carrito
+            </h4>
+            <ul class='mb-6 px-4 flex-1'>
+              <li class='flex w-full justify-between border-b pb-4'>
+                <div class='flex gap-4'>
+                  <div class='aspect-square w-16 bg-base-200 overflow-hidden'>
+                    <img
+                      src='https://picsum.photos/id/1003/1200/800'
+                      alt='Producto img'
+                      class='w-full h-full object-cover'
+                    />
+                  </div>
+                  <div class='flex flex-col justify-between'>
+                    <p>Aloe</p>
+                    <div class='flex [&>*]:size-[2rem]'>
+                      <button class='border'> - </button>
+                      <div class='border-y flex items-center justify-center'>
+                        <span>1</span>
+                      </div>
+                      <button class='border'> + </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class='flex flex-col justify-between'>
+                  <div class='flex flex-row-reverse'>
+                    <IconCircleX className='text-gray-400' />
+                  </div>
+                  <div>$100.000</div>
+                </div>
+              </li>
+            </ul>
+
+            <div>
+              <div class='flex justify-between border-y p-2'>
+                <p>Subtotal</p>
+                <p>$200.000</p>
+              </div>
+
+              <div class='flex flex-col gap-2 py-4 px-2'>
+                <a href='/cart' class='btn btn-outline w-full'> Ver Carrito </a>
+                <a href='/cart' class='btn btn-outline w-full'> Pagar </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <button class='flex md:hidden btn btn-ghost btn-square'>
         <IconMenu client:only />
