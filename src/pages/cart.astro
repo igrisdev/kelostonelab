@@ -1,4 +1,5 @@
 ---
+import { IconCircleX } from '@assets/icons/IconCircleX'
 import Container from '@components/general/Container.astro'
 import Layout from '@layouts/Layout.astro'
 
@@ -24,7 +25,6 @@ const products = Array(3).fill(0)
     <div class='flex flex-col lg:flex-row items-center lg:items-start gap-6'>
       <div class='flex-1 w-full max-h-[50vh] overflow-auto lg:w-max'>
         <table class='table border'>
-          <!-- head -->
           <thead>
             <tr>
               <th></th>
@@ -38,7 +38,11 @@ const products = Array(3).fill(0)
             {
               products.map(() => (
                 <tr>
-                  <td>x</td>
+                  <td>
+                    <div class='flex items-center justify-center'>
+                      <IconCircleX className='text-gray-400' />
+                    </div>
+                  </td>
                   <td class='flex gap-4 items-center'>
                     <div class='aspect-square w-16 bg-base-200 overflow-hidden'>
                       <img src='' alt='Producto img' />
