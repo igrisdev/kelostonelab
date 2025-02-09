@@ -1,11 +1,13 @@
 import { create } from 'zustand'
 
 type CartStore = {
-  cart: number
+  cart: iCart[]
   setCart: () => void
 }
 
+type iCart = {}
+
 export const useStoreCart = create<CartStore>(set => ({
-  cart: 1,
-  setCart: () => set((state: any) => ({ cart: state.cart })),
+  cart: [{}, {}],
+  setCart: (state = {}) => set(({ cart }) => ({ cart: [...cart, state] })),
 }))

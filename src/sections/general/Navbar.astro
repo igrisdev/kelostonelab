@@ -3,6 +3,7 @@ import { IconCircleX } from '@assets/icons/IconCircleX'
 import { IconMenu } from '@assets/icons/IconMenu'
 import { IconShoppingCart } from '@assets/icons/IconShoppingCart'
 import Container from '@components/general/Container.astro'
+import { ListCartDrawer } from '@components_functional/ListCartDrawer'
 ---
 
 <div
@@ -54,36 +55,7 @@ import Container from '@components/general/Container.astro'
               </label>
             </div>
 
-            <ul class='mb-6 px-4 flex-1'>
-              <li class='flex w-full justify-between border-b pb-4'>
-                <div class='flex gap-4'>
-                  <div class='aspect-square w-16 bg-base-200 overflow-hidden'>
-                    <img
-                      src='https://picsum.photos/id/1003/1200/800'
-                      alt='Producto img'
-                      class='w-full h-full object-cover'
-                    />
-                  </div>
-                  <div class='flex flex-col justify-between'>
-                    <p>Aloe</p>
-                    <div class='flex [&>*]:size-[2rem]'>
-                      <button class='border'> - </button>
-                      <div class='border-y flex items-center justify-center'>
-                        <span>1</span>
-                      </div>
-                      <button class='border'> + </button>
-                    </div>
-                  </div>
-                </div>
-
-                <div class='flex flex-col justify-between'>
-                  <div class='flex flex-row-reverse'>
-                    <IconCircleX className='text-gray-400' client:only />
-                  </div>
-                  <div>$100.000</div>
-                </div>
-              </li>
-            </ul>
+            <ListCartDrawer client:load />
 
             <div>
               <div class='flex justify-between border-y p-2'>
