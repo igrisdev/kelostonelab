@@ -50,7 +50,7 @@ import Container from '@components/general/Container.astro'
                 aria-label='close'
                 class='block md:hidden'
               >
-                <IconCircleX className='' />
+                <IconCircleX className='' client:only />
               </label>
             </div>
 
@@ -78,7 +78,7 @@ import Container from '@components/general/Container.astro'
 
                 <div class='flex flex-col justify-between'>
                   <div class='flex flex-row-reverse'>
-                    <IconCircleX className='text-gray-400' />
+                    <IconCircleX className='text-gray-400' client:only />
                   </div>
                   <div>$100.000</div>
                 </div>
