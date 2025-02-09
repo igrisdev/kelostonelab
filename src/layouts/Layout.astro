@@ -1,5 +1,5 @@
 ---
-import Container from '../components/general/Container.astro'
+import { ClientRouter } from 'astro:transitions'
 import Navbar from '@sections/general/Navbar.astro'
 import Footer from '@sections/general/Footer.astro'
 ---
@@ -12,6 +12,7 @@ import Footer from '@sections/general/Footer.astro'
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>Kelo Stone Lab</title>
+    <ClientRouter />
   </head>
   <body>
     <Navbar />
