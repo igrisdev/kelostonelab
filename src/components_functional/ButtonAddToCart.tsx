@@ -1,3 +1,4 @@
+import { IconShoppingCart } from '@assets/icons/IconShoppingCart'
 import { useStoreCart } from '@stores/cartStore'
 
 export const ButtonAddToCart = ({ small = false }) => {
@@ -10,7 +11,7 @@ export const ButtonAddToCart = ({ small = false }) => {
   if (small)
     return (
       <button className='btn btn-ghost btn-square btn-sm' onClick={handleClick}>
-        h
+        <IconShoppingCart />
       </button>
     )
 
