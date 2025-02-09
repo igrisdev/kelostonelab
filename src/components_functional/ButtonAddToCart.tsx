@@ -1,5 +1,4 @@
 import { useStoreCart } from '@stores/cartStore'
-import { ShoppingCart } from 'lucide-react'
 
 export const ButtonAddToCart = ({ small = false }) => {
   const { setCart } = useStoreCart()
@@ -11,7 +10,7 @@ export const ButtonAddToCart = ({ small = false }) => {
   if (small)
     return (
       <button className='btn btn-ghost btn-square btn-sm' onClick={handleClick}>
-        <ShoppingCart size={17} />
+        h
       </button>
     )
 
