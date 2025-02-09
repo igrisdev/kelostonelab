@@ -5,7 +5,7 @@ export const ListCartDrawer = () => {
   const { cart } = useStoreCart()
 
   return (
-    <ul className='mb-6 px-4 flex-1'>
+    <ul className='mb-6 px-4 flex-1 h-full overflow-y-auto'>
       {cart.map((item, index) => (
         <CartUI key={index} />
       ))}
