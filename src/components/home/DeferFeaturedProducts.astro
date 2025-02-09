@@ -1,5 +1,6 @@
 ---
 import { IconShoppingCart } from '@assets/icons/IconShoppingCart'
+import { ButtonAddToCart } from '@components_functional/ButtonAddToCart'
 import { getProducts } from '@graphql/functions/products'
 import type { iProduct } from '@graphql/functions/products'
 
@@ -31,9 +32,7 @@ const products = await getProducts(10)
       </div>
 
       <div>
-        <button class="btn btn-ghost btn-square btn-sm">
-          <IconShoppingCart size={17} client:only />
-        </button>
+        <ButtonAddToCart small client:load />
       </div>
 
     </div>
