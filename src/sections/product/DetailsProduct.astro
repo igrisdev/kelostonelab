@@ -1,6 +1,7 @@
 ---
 import { getProduct } from '@graphql/functions/products'
 import InfoProduct from './InfoProduct.astro'
+import { ButtonAddToCart } from '@components_functional/ButtonAddToCart'
 
 const { id } = Astro.params
 
@@ -43,7 +44,7 @@ const product = await getProduct('gid://shopify/Product/' + id)
       </div>
 
       <div>
-        <button class='btn btn-accent rounded-none'>Add to cart</button>
+        <ButtonAddToCart client:load />
       </div>
     </div>
 
