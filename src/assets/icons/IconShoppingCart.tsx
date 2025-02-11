@@ -7,9 +7,9 @@ export const IconShoppingCart = ({ size = 20 }: { size?: number }) => {
       viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     >
       <circle cx='8' cy='21' r='1' />
       <circle cx='19' cy='21' r='1' />
