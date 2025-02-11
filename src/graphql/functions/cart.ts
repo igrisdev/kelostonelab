@@ -1,7 +1,8 @@
-import { createCartMutation } from '@graphql/queries/cart'
 import { connection } from './connection'
+import { createCartMutation } from '@graphql/queries/cart'
 
-export const createCart = async (cartInput: any) => {
+// export const createCart = async (cartInput: any) => {
+export const createCart = async () => {
   const variables = {
     cartInput: {
       lines: [
@@ -16,6 +17,7 @@ export const createCart = async (cartInput: any) => {
       },
     },
   }
+
   try {
     const { data, errors, extensions } = await connection(
       createCartMutation,
