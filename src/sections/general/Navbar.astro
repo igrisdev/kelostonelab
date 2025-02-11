@@ -1,9 +1,10 @@
 ---
 import { IconCircleX } from '@assets/icons/IconCircleX'
 import { IconMenu } from '@assets/icons/IconMenu'
-import { IconShoppingCart } from '@assets/icons/IconShoppingCart'
+import IconShoppingCart from '@assets/icons/IconShoppingCart.astro'
 import Container from '@components/general/Container.astro'
 import { ListCartDrawer } from '@components_functional/ListCartDrawer'
+import { ButtonOrder } from '@components_functional/ButtonOrder'
 ---
 
 <div
@@ -32,7 +33,7 @@ import { ListCartDrawer } from '@components_functional/ListCartDrawer'
             for='my-drawer-4'
             class='drawer-button btn btn-ghost btn-square'
           >
-            <IconShoppingCart client:only />
+            <IconShoppingCart />
           </label>
         </div>
         <div class='drawer-side'>
@@ -67,7 +68,8 @@ import { ListCartDrawer } from '@components_functional/ListCartDrawer'
                 <a href='/cart' class='btn btn-outline w-full'>
                   Pagina del carrito
                 </a>
-                <a href='/cart' class='btn btn-outline w-full'> Encargar </a>
+
+                <ButtonOrder client:load />
               </div>
             </div>
           </div>
