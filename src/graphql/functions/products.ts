@@ -1,5 +1,5 @@
 import { getProductQuery, getProductsQuery } from '@graphql/queries/products'
-import { clientRequest } from './clientRequest'
+import { connection } from './connection'
 
 export type iProductsQuery = {
   node: {
@@ -42,7 +42,7 @@ export async function getProducts(first = 10) {
   }
 
   try {
-    const { data, errors, extensions } = await clientRequest(
+    const { data, errors, extensions } = await connection(
       getProductsQuery,
       variables
     )
@@ -75,7 +75,7 @@ export const getProduct = async (id: string) => {
   }
 
   try {
-    const { data, errors, extensions } = await clientRequest(
+    const { data, errors, extensions } = await connection(
       getProductQuery,
       variables
     )

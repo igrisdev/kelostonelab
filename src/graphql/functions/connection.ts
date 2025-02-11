@@ -1,6 +1,6 @@
 import { client } from '@services/connectionShopify'
 
-export const clientRequest = async (query: string, variables: any) => {
+export const connection = async (query: string, variables: any) => {
   const { data, errors, extensions } = await client.request(query, {
     variables,
   })
