@@ -8,6 +8,6 @@ type CartStore = {
 type iCart = {}
 
 export const useStoreCart = create<CartStore>(set => ({
-  cart: [{}, {}],
+  cart: [],
   setCart: (state = {}) => set(({ cart }) => ({ cart: [...cart, state] })),
 }))
