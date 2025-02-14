@@ -8,13 +8,15 @@ export const createCart = async () => {
       lines: [
         {
           quantity: 1,
-          merchandiseId: 'gid://shopify/ProductVariant/8822411690208',
+          merchandiseId: 'gid://shopify/ProductVariant/47005634855136',
         },
       ],
-      attributes: {
-        key: 'cart_attribute_key',
-        value: 'This is a cart attribute value',
-      },
+      attributes: [
+        {
+          key: 'cart_attribute_key',
+          value: 'This is a cart attribute value',
+        },
+      ],
     },
   }
 

@@ -50,10 +50,16 @@ export async function getProducts(first = 10) {
     if (errors) {
       console.error('Errores en la consulta:', errors)
     } else {
+      console.log(
+        'Productos obtenidos:',
+        JSON.stringify(data.products.edges, null, 2)
+      )
+
       const newData = data.products.edges.map(
         (product: iProductsQuery): iProduct => {
           return {
             id: product.node.id,
+            idVariant: product.node.variants.edges[0].node.id,
             title: product.node.title,
             category: product.node.handle,
             price: product.node.priceRange.minVariantPrice.amount,
@@ -83,7 +89,7 @@ export const getProduct = async (id: string) => {
     if (errors) {
       console.error('Errores en la consulta:', errors)
     } else {
-      // console.log('Producto obtenido:', JSON.stringify(data.product, null, 2))
+      console.log('Producto obtenido:', JSON.stringify(data.product, null, 2))
 
       const newData = {
         id: data.product.id,

@@ -19,6 +19,18 @@ export const getProductsQuery = `
               }
             }
           }
+          variants(first: 10) {
+            edges {
+              node {
+                id
+                title
+                price {
+                  amount
+                  currencyCode
+                }
+              }
+            }
+          }
         }
       }
     }

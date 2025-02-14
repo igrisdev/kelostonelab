@@ -6,7 +6,7 @@ import type { iProduct } from '@graphql/functions/products'
 const products = await getProducts(10)
 ---
 
-{products.map((item: iProduct) => (
+{products?.map((item: iProduct) => (
   <article class='flex flex-col gap-2'>
     <div class='aspect-square bg-base-200'>
       <a href={`/product/${item.id.split('/')[4]}`}>
